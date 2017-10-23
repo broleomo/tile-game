@@ -1,0 +1,21 @@
+.container {
+  font-family: 'Roboto', sans-serif;
+}
+
+#tile-outline {
+  position: relative;
+  font-family: 'Roboto';
+}
+
+.tile {
+  background-color: #FFFF;
+  color: black;
+  padding: 10px;
+  width: 75px;
+  height: 75px;
+  font-family:'Roboto', sans-serif;
+  font-size: 28px;
+  border-style: inset;
+  border-width: thin;
+  position: absolute;
+}
