@@ -18,24 +18,34 @@ function swapTiles(e){
   // let tilex = document.getElementById("t12").style.left;
   let blanky = document.getElementById("blank").style.top;
   let blankx = document.getElementById("blank").style.left;
-  if(parseInt(e.target.style.left) == parseInt(blankx) - 100  && parseInt(e.target.style.top) == parseInt(blanky)){
-    let newTilex = e.target.style.left;
-    e.target.style.left = blankx;
-    blankx = newTilex;
+  let x = e.target.style.left
+  let y = e.target.style.top
 
+  if(x == parseInt(blankx) - 100  && parseInt(y) == parseInt(blanky)){
+    let newTilex = x;
+    x = blankx;
+    document.getElementById('blank').style.left = newTilex;
   }
-  else if (parseInt(e.target.style.top) == parseInt(blanky) + 100 && parseInt(e.target.style.left) == parseInt(blankx)){
-    let newTilex = e.target.style.left;
-    e.target.style.left = blankx;
-    blankx = newTilex;
+  else if (x == parseInt(blankx) + 100  && parseInt(y) == parseInt(blanky)){
+    let newTilex = x;
+    x = blankx;
+    document.getElementById('blank').style.left = newTilex;
+  }
+  else if (parseInt(y) == parseInt(blanky) + 100 && parseInt(x) == parseInt(blankx)){
+    let newTiley = y;
+     y = blanky;
+    document.getElementById('blank').style.top = newTiley;
 // }
 // console.log(tiley);
 console.log("Clicked");
 }
-else {
-  
+  else if (parseInt(y) == parseInt(blanky) - 100 && parseInt(x) == parseInt(blanky)){
+    let newTiley = y;
+    y  = blanky;
+    document.getElementById('blank').style.top = newTiley;
 }
 }
+
 let outline = document.getElementById('tile-outline')
 for (var i = 1; i <= 16; i++) {
   let tile = document.createElement('div');
