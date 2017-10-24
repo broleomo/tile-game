@@ -18,30 +18,30 @@ function swapTiles(e){
   // let tilex = document.getElementById("t12").style.left;
   let blanky = document.getElementById("blank").style.top;
   let blankx = document.getElementById("blank").style.left;
-  let x = e.target.style.left
-  let y = e.target.style.top
+  // let x = e.target.style.left
+  // let y = e.target.style.top
 
-  if(x == parseInt(blankx) - 100  && parseInt(y) == parseInt(blanky)){
-    let newTilex = x;
-    x = blankx;
+  if(parseInt(e.target.style.left) == parseInt(blankx) - 100  && parseInt(e.target.style.top) == parseInt(blanky)){
+    let newTilex = e.target.style.left;
+    e.target.style.left = blankx;
     document.getElementById('blank').style.left = newTilex;
   }
-  else if (x == parseInt(blankx) + 100  && parseInt(y) == parseInt(blanky)){
-    let newTilex = x;
-    x = blankx;
+  else if (parseInt(e.target.style.left) == parseInt(blankx) + 100  && parseInt(e.target.style.top) == parseInt(blanky)){
+    let newTilex = e.target.style.left;
+    e.target.style.left = blankx;
     document.getElementById('blank').style.left = newTilex;
   }
-  else if (parseInt(y) == parseInt(blanky) + 100 && parseInt(x) == parseInt(blankx)){
-    let newTiley = y;
-     y = blanky;
+  else if (parseInt(e.target.style.top) == parseInt(blanky) + 100 && parseInt(e.target.style.left) == parseInt(blankx)){
+    let newTiley = e.target.style.top;
+     e.target.style.top = blanky;
     document.getElementById('blank').style.top = newTiley;
 // }
 // console.log(tiley);
 console.log("Clicked");
 }
-  else if (parseInt(y) == parseInt(blanky) - 100 && parseInt(x) == parseInt(blanky)){
-    let newTiley = y;
-    y  = blanky;
+  else if (parseInt(e.target.style.top) == parseInt(blanky) - 100 && parseInt(e.target.style.left) == parseInt(blankx)){
+    let newTiley = e.target.style.top;
+    e.target.style.top  = blanky;
     document.getElementById('blank').style.top = newTiley;
 }
 }
