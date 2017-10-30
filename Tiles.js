@@ -21,10 +21,6 @@ function handleTile(e){
 
 
 // Creating shuffled puzzle
-
-function handleShuffle(){
-  let outline = document.getElementById('tile-outline')
-  let board2 = [...board]
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
@@ -36,7 +32,13 @@ function shuffle(array) {
   }
   return array;
 }
-let board3 = shuffle(board2)
+
+
+function handleShuffle(){
+  let outline = document.getElementById('tile-outline')
+  let board2 = [...board]
+  let board3 = shuffle(board2)
+  outline.innerHTML = " "
 for (var i = 0; i < board3.length; i++) {
   let tile = document.createElement('div');
   tile.id = 't' + board3[i];
@@ -53,10 +55,12 @@ for (var i = 0; i < board3.length; i++) {
   tile.style.backgroundPosition = copyImageRow[board3[i]] * 100 + 'px' + " " + copyImageCol[board3[i]] * 100 + 'px';
   outline.appendChild(tile);
     }
+
 }
 
 function handleSolve(){
 let outline = document.getElementById('tile-outline')
+outline.innerHTML = ''
 for (var i = 0; i < board.length; i++) {
   let tile = document.createElement('div');
   tile.id = 't' + board[i];
